@@ -1,0 +1,77 @@
+.app {
+  .navbarTop {
+    background-color: #5058b9;
+    a {
+      border-bottom: none;
+    }
+  }
+  .brand {
+    position: absolute;
+    $size: 40px;
+    top: 5px;
+    left: 5px;
+    display: inline-block;
+    background: url('../Home/logo.png') no-repeat center center;
+    width: 160px;
+    height: $size;
+    background-size: 80%;
+    margin: 0 10px 0 0;
+  }
+  nav :global(.fa) {
+  }
+  .logoutLink {
+    margin-top: 5px;
+    a {
+      padding: 0;
+      margin: 0;
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(255,255,255,0.8);
+      border-radius: 50%;
+      text-align: center;
+      font-size: 20px;
+      line-height: 36px;
+      :global(.fa) {
+       margin-right: -4px; 
+      }
+    }
+    @media only screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+  :global(.logoutMenu) {
+    @media only screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+  .loggedInMessage {
+    color: #FFFFFF;
+    margin-left: 10px;
+    margin-right: 10px;
+    @media only screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+  .bottomLogout {
+    @media only screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+}
+.loggedin {
+  background-color: #f5f7fa;
+  .appContent {
+    margin: 50px 0 0 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1060px) {
+    margin-top: 100px;
+  }
+  @media only screen and (max-width: 1200px) {
+    .appContent {
+      padding-top: 15px;
+    }
+  }
+} 
+

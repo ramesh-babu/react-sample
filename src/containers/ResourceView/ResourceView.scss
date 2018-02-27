@@ -1,0 +1,18 @@
+@import "../../theme/variables.scss";
+
+.home {
+  dd {
+    margin-bottom: 15px;
+  }
+
+  .leftLidebar {
+  	max-height: 80vh;
+  	overflow-y: auto;
+  	border-right: 1px solid #ccc;
+  	tbody tr:hover td {
+  		background-color: #5058b9;
+        cursor: pointer;
+        color: #fff;
+  	}
+  }
+}

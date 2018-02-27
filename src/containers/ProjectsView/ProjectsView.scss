@@ -1,0 +1,17 @@
+@import "../../theme/variables.scss";
+
+.home {
+  dd {
+    margin-bottom: 15px;
+  }
+  label { padding-bottom: 0px; margin-bottom: -19px; padding-top: 10px; }
+  .leftLidebar {
+  	max-height: 80vh;
+  	overflow-y: auto;
+  	tbody tr:hover td {
+  		background-color: #5058b9;
+        cursor: pointer;
+        color: #fff;
+  	}
+  }
+}

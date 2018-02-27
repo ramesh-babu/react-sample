@@ -1,0 +1,15 @@
+.loaderContainer {
+	width: 100%;
+	text-align: center;
+	margin-top: 10%;
+	margin-bottom: 10%;
+	.loader {
+		min-height: 100%;
+	  width: 100%;
+	  padding: 32px;
+	  background-repeat: no-repeat;
+	  justify-content: center;
+	  align-items: center;
+	  background-image: url('./loading.gif');
+	}
+}

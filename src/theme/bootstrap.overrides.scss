@@ -1,0 +1,390 @@
+/**
+ * Override Bootstrap styles that you can't modify via variables here.
+ *
+ */
+@import "~react-big-calendar/lib/css/react-big-calendar.css";
+@import "~react-datepicker/dist/react-datepicker.css";
+
+body {
+  padding: 0 !important;
+  margin: 0 !important;
+  background: #f5f7fa !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  background-size: cover !important;
+  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+select {
+  -webkit-appearance: menulist !important;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #efefef;
+  cursor: pointer;
+}
+
+.navbar-brand {
+  position: relative;
+  padding-left: 50px;
+  width: 160px;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: #33e0ff;
+}
+
+.navbar-default .navbar-nav > li > a:focus {
+  color: #FFFFFF;
+}
+
+.navbar-default .navbar-nav > li.active {
+  background-color: #FFFFFF;
+}
+
+.navbar-default .navbar-nav > li.active > a{
+  color: #000000;
+}
+.navbar-default {
+  .navbar-collapse {
+    padding-left: 210px;
+    @media only screen and (min-width: 768px) and (max-width: 1060px) {
+      clear: both;
+      float: right;
+      padding-left: 0;
+    }
+    @media only screen and (max-width: 767px) {
+      padding-left: 15px;
+      
+      .navbar-nav {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #000000;
+  background-color: transparent;
+}
+
+.rbc-calendar {
+  min-height: 600px;
+  background-color: #fff;
+  padding: 15px;
+  border: 1px solid #e5e5e5;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 1px rgba(0,0,0,.04);
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.04);
+  -moz-box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+.table-bordered {
+ margin-bottom: 0px;
+}
+
+/*
+ * react-circular-progressbar styles
+ *
+ * All of the styles in this file are optional and configurable!
+ */
+
+.CircularProgressbar {
+  /*
+   * This fixes an issue where the CircularProgressbar svg has
+   * 0 width inside a "display: flex" container, and thus not visible.
+   *
+   * If you're not using "display: flex", you can remove this style.
+   */
+  width: 100%;
+}
+
+.CircularProgressbar .CircularProgressbar-path {
+  stroke: #5058b9;
+  transition: stroke-dashoffset 0.5s ease 0s;
+}
+
+.CircularProgressbar .CircularProgressbar-trail {
+  stroke: #d6d6d6;
+}
+
+.CircularProgressbar .CircularProgressbar-text {
+  fill: #5058b9;
+  font-size: 20px;
+  dominant-baseline: middle;
+  text-anchor: middle;
+}
+
+.text-danger .CircularProgressbar .CircularProgressbar-path {
+  stroke: #a94442;
+}
+
+.text-danger .CircularProgressbar .CircularProgressbar-text {
+  fill: #a94442;
+}
+
+.text-success .CircularProgressbar .CircularProgressbar-path {
+  stroke: #6fb950;
+}
+
+.text-success .CircularProgressbar .CircularProgressbar-text {
+  fill: #6fb950;
+}
+
+.padding-20 {
+  padding: 20px!important;
+}
+
+.padding-10 {
+  padding: 10px!important;
+}
+
+.widget {
+  background-color: #fff;
+  margin-bottom: 15px;
+  position: relative;
+  border: 1px solid #e5e5e5;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.04);
+  box-shadow: 0 1px 1px rgba(0,0,0,.04);  
+  border-radius: 0;
+  padding: 0;
+  
+  .widget-header {
+    padding: 10px 15px;
+    border-bottom: 1px solid #dde6e9;
+    background-color: rgba(250,250,250,0.8);
+    font-weight: bold;
+    
+    h4 {
+      font-size: 16px;
+      margin: 0;
+      font-weight: bold;
+      line-height: 20px;
+    }
+  }
+  .totalCount {
+    float: right;
+    background-color: #5058b9;
+    font-size: 12px;
+    line-height: 14px;
+    color: #fff;
+    font-weight: normal;
+    padding: 3px 8px;
+    border-radius: 2px;
+    text-align: center;
+  }
+  .widget-content {    
+    ul {
+      padding: 5px 0 5px 0;
+      margin: 0;
+      border-bottom: 1px solid #dde6e9;
+      
+      li {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        display: inline-block;
+        width: 100%;
+        padding: 5px 15px;
+        
+        .totalCount {
+          background-color: rgba(51,51,51,0.5);
+          padding: 3px 5px;
+          font-size: 11px;
+          min-width: 30px;
+          
+          &.bDate {
+            background-color: #5058b9;
+          }          
+        }
+        &.headTotal {
+          .totalCount {
+            background-color: #5058b9;
+            font-size: 12px;
+          }
+        }
+        &.lossTotal {
+          .totalCount {
+            background-color: #f28954;
+          }
+        }
+      }
+    }
+  }
+}
+
+.pieChatGroup {
+  .widget-content {
+    padding: 15px;
+    @media only screen and (min-width: 768px) {
+      min-height: 335px;
+    }
+  }
+}
+
+.widget-shadow {
+  border: 1px solid #e5e5e5;
+  -webkit-box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.margin-top-10 {
+  margin-top: 10px!important;
+}
+
+.font-size-40 {
+  font-size: 40px!important;
+  small {
+    font-size: 18px;
+  }
+}
+
+.centered {
+  text-align: center;
+}
+
+.rbc-event {
+  border-radius: 3px;
+}
+.rbc-toolbar {
+  margin-bottom: 15px;
+  
+  @media only screen and (max-width: 500px) {
+    span {
+      &:first-child {
+        display: none;
+      }
+    }
+  }
+}
+.search-input {
+  input {
+    font-family: "Work Sans","Helvetica Neue",Arial,sans-serif;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    background: #fff;
+    border-radius: 0;
+    box-sizing: border-box !important;
+  }
+}
+
+.modelHeader {
+  background: #5058b9;
+  color: #fff;
+  button {
+    color: #fff;
+  }
+}
+.modelBody {
+  hr {
+    margin: 15px 0;
+  }   
+}
+
+
+.rbc-btn-group button {
+  text-transform: capitalize;
+  text-shadow: none;
+  font-size: 13px;
+  padding: 6px 10px;
+  
+  &.rbc-active {
+    box-shadow: none;
+    background-color: #eee;
+    border-color: #ccc;
+    &:hover,
+    &:active {
+      background-color: #eee;
+      border-color: #ccc;    
+    }    
+  }
+  &:hover,
+  &:active {
+    background-color: #eee;
+    border-color: #ccc;    
+  }
+}
+
+.rbc-day-slot .rbc-event-label {
+  display: none !important;
+}
+
+.error {
+  color: red;
+}
+
+.nav-tabs > li >a {
+  background-color: #eee;
+  outline: none;
+}
+.nav-tabs > li.active > a {
+  font-weight: bold;
+  color: #FFF !important;
+  background-color: #5058b9 !important;
+}
+
+.table > tbody > tr.bg-primary {
+  font-weight: bold;
+  color: #FFF !important;
+  background-color: #5058b9 !important;
+}
+
+button {
+  &.close {
+    opacity: 1;
+    &:hover,
+    &:focus,
+    &:active {
+      opacity: 0.8;
+      color: #fff;
+    }
+  }
+}
+/** container overrides styles **/
+.container {
+  max-width: 1170px;
+  width: auto;
+}
+
+table {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-top: 15px;
+  margin-bottom: 0px;
+
+  thead {
+    th {
+      background-color: #eee;
+    }
+  }
+}
+
+/** mobile navbar styles **/
+.navbar-default {
+  .navbar-toggle {
+    border: none;
+    background-color: transparent;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: transparent;
+    }
+    
+    .icon-bar {
+      background-color: #fff;
+    }
+  }
+}

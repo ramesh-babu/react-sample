@@ -1,0 +1,30 @@
+@import "../../theme/variables.scss";
+
+.myleaves {
+  dd {
+    margin-bottom: 15px;
+  }
+}
+.modelHeader {
+  background: #5058b9;
+  color: #fff;
+  button {
+    color: #fff;
+  }
+}
+.modelBody {
+  hr {
+    margin: 15px 0;
+  }
+  label { padding-bottom: 0px; margin-bottom: 0px; padding-top: 10px; }   
+}
+.buttonTop {
+  margin-top: 16px;
+}
+.toworklabel {}
+.addstyle {
+  margin-bottom: -35px;
+}
+.selectpersonlable {
+  float: left;
+}

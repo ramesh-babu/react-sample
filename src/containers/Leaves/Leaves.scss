@@ -1,0 +1,17 @@
+@import "../../theme/variables.scss";
+
+.myleaves {
+  dd {
+    margin-bottom: 15px;
+  }
+  
+  :global {
+    .nav-tabs {
+      margin-bottom: 15px;
+    }
+    
+    .topActions {
+      float: right;
+    }
+  }
+}

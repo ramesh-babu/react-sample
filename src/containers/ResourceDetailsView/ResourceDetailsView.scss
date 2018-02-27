@@ -1,0 +1,20 @@
+@import "../../theme/variables.scss";
+
+.home {
+  dd {
+    margin-bottom: 15px;
+  }
+  label { padding-bottom: 0px; margin-bottom: -19px; padding-top: 10px; }
+  .resourceInfo {
+	  padding-bottom: 20px;
+	  strong {
+	    color: #000;
+	  }
+	  .filterActions {
+	    padding-top:10px;
+	    button {
+	      margin-left: 15px;
+	    }
+	  }
+	}
+}

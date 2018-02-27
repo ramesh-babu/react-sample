@@ -1,0 +1,63 @@
+@import "../../theme/variables.scss";
+
+.home {
+  dd {
+    margin-bottom: 15px;
+  }
+  .heading {
+  	font-weight: bold;
+  }
+  .projectInfo {
+    padding-bottom: 20px;
+    strong {
+      color: #000;
+    }
+    .filterActions {
+      padding-top:10px;
+      button {
+        margin-left: 15px;
+      }
+    }
+  }
+}
+
+.resoureceUtilization {
+  padding: 0;
+  margin: 30px 0 0 0;
+
+  li {
+    list-style-type: none;
+    position: relative;
+    padding-left: 15px;
+
+    &:before {
+      width: 10px;
+      height: 10px;
+      content: '';
+      left: 0;
+      top: 4px;
+      background-color: red;
+      position: absolute;
+    }
+    &:first-child {
+      &:before {
+        background-color: #3cad7b;
+      }
+    }
+    &:nth-child(2) {
+      &:before {
+        background-color: #ffb300;
+      }
+    }
+    &:nth-child(3) {
+      &:before {
+        background-color: #dc2727;
+      }
+    }
+    &:nth-child(4) {
+      &:before {
+        background-color: #000;
+      }
+    }        
+  }
+}
