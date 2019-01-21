@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Clash</title>
+  <!-- the star of the show - the Vue library! -->
+  <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+  <script src="https://unpkg.com/vue-select@latest"></script>
+  <script src="https://unpkg.com/vue-select-checkbox@latest"></script>
+  <script src="https://unpkg.com/vue-multiselect@2.1.0"></script>
+<link rel="stylesheet" href="https://unpkg.com/vue-multiselect@2.1.0/dist/vue-multiselect.min.css">
+  <script>
+    // when life is settled, load up the fun stuff
+    document.addEventListener('DOMContentLoaded', function () {
+      new Vue({
+        el: '#sg1',
+        // define data - initial display text
+        data: {
+          m1: "You got to let me know"
+        }
+      })
+      Vue.component('v-select', VueSelect.VueSelect);
+      Vue.component('vue-multiselect', window.VueMultiselect.default)
+      new Vue({
+        el: '#app',
+        data: {
+            options: []
+        }
+        })
+        const option = ['Select option', 'options', 'selected', 'mulitple', 'label', 'searchable', 'clearOnSelect', 'hideSelected', 'maxHeight', 'allowEmpty', 'showLabels', 'onChange', 'touched'];
+        new Vue({
+            el: '#app2',
+            data: {
+                value: '',
+                options: option
+            }
+        })
+    })
+  </script>
+</head>
+<body>
+  <!-- text -->
+  <div id="sg1">
+    <p>{{ m1 }}</p>
+  </div>
+  <div id="app">
+        <!-- <v-select checkboxed=true :options="[{label: 'ramesh', value: 'Ramesh Babu Ganteti'}, {label: 'prajwal', value: 'Prajwal Rai'}, {label: 'gopal', value: 'Gopala krishna Pippara'}]"></v-select> -->
+    </div>
+    <div id="app2">
+            <label class="typo__label">Multi select</label>
+            <vue-multiselect :multiple="true" v-model="value" :options="options" :searchable="true" :close-on-select="false" :show-labels="true" placeholder="Pick a value"></vue-multiselect>
+            <pre class="language-json"><code>{{ value  }}</code></pre>
+          </div>
+</body>
+</html>
