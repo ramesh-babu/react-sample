@@ -1,1 +1,166 @@
-test1234
+palindrome practice:
+import React, { Fragment } from 'react';
+import { PalindromeList } from '../components/PalindromeList/PalindromeList';
+import findIndex from 'lodash/findIndex'
+import styled from 'styled-components';
+
+const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+`
+
+const TextArea = styled.textarea`
+  width: 300px;
+  height: 150px;
+`
+const PalimTitle = styled.div`
+    text-align: center ;
+`
+
+/**
+ * Recursive function calculates whether given string palindrome or not.
+ * @return {boolean} The result of palindrome validation will ture or false.
+ */
+export const palindrome = (str) => {
+    const strLen = str.length;
+    if (strLen === 0 || strLen === 1) {
+        return true;
+    }
+
+    if (str[0] === str[strLen - 1]) {
+        return palindrome( str.slice(1, strLen - 1) );
+    }
+
+    return false;
+}
+
+/**
+ * Operates on given para.
+ * @return {Array} The result of splitting para into words.
+ */
+export const splitPalindrome = (sentence) => {
+    let result = [];
+    /**
+     * Trim the spaces from para begin / end
+     * Convert para to lower case
+     * Remove punctuations from para
+     * Split para by spaces
+     * Remove empty string from para
+     */
+    let characterArr = sentence.trim().toLowerCase().replace(/[^A-Z \s]/ig, "").split(' ').filter(Boolean);
+
+    // Remove duplicates from array
+    // characterArr = Array.from(new Set(characterArr)); // Not working in IE
+    let uniqueArray = characterArr.filter((item, index)=>{
+        return characterArr.indexOf(item) === index
+    })
+
+    // Loop through array and call palindrom methid on each item.
+    uniqueArray.forEach(function (val) {
+        palindrome(val) === true ? result.push(val)
+            : null;
+    })
+    return result;
+}
+
+/**
+ * PalindromeCheck is base class. It is designed to display palindrome widget.
+ */
+class PalindromeCheck extends React.Component {
+    state = {
+        text: '',
+        items: []
+    }
+
+    handleSubmit = (e) => {
+        // debugger
+        e.preventDefault();
+        const palResult = splitPalindrome(this.state.text);
+        this.setState({ items: palResult });
+    }
+
+    handleChange = (e) => {
+        this.setState({ text: e.target.value });
+    }
+
+    render() {
+        return (
+            <Fragment>
+            <Container>
+                <PalimTitle>Input Form</PalimTitle>
+                <div>
+                    <form onSubmit={this.handleSubmit}>
+                        <Container>
+                        <div>
+                        <TextArea
+                            id="pal-check"
+                            value={this.state.text}
+                            onChange={this.handleChange}
+                        />
+                        </div>
+                        <div>
+                        <button>
+                            Submit
+                        </button>
+                        </div>
+                        </Container>
+                    </form>
+                </div>
+                <div>
+                    <PalindromeList items={this.state.items} />
+                <h1>Test</h1>
+                </div>
+            </Container>
+            </Fragment>
+        )
+    }
+}
+
+export default PalindromeCheck;
+
+PalindromeList:
+import React from 'react';
+import uniqueId from 'lodash/uniqueId'
+
+/**
+ * PalindromeList is q pure component to just display palindrome list.
+ */
+export const PalindromeList = React.memo(props => { // React.memo pure component
+  return <div><ul>
+    {props.items.map(item => (
+      <li key={uniqueId('id_')}>{item}</li>
+      // Using lodash _.uniqueId method to pass unique id to the list
+    ))}
+  </ul></div>;
+});
+
+
+breakpoints:
+import { css } from 'styled-components';
+
+// This class is to consider breakpoints for the various sizes of devices
+const sizes = {
+    tablet: 900,
+    mobile: 550
+};
+
+const media = Object.keys(sizes).reduce((acc, label) => {
+    acc[label] = (...args) => css`
+        @media (max-width: ${sizes[label] / 16}rem) {
+            ${css(...args)};
+        }
+    `;
+
+    return acc;
+}, {});
+
+export default (theme = {}) => ({
+    ...theme,
+    ...media
+});
+
+import { ThemeProvider } from 'styled-components';
+
+import withBreakpoints from '../common/breakpoint';
+
+<ThemeProvider theme={withBreakpoints(theme)}>
