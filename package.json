@@ -126,7 +126,7 @@
     "lru-memoize": "^1.0.0",
     "map-props": "^1.0.0",
     "material-ui": "^0.19.1",
-    "moment": "^2.18.1",
+    "moment": "^2.29.4",
     "multireducer": "^2.0.0",
     "piping": "^0.3.0",
     "pretty-error": "^1.2.0",
